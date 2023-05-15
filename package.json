@@ -1,0 +1,18 @@
+{
+  "name": "test-automation-assessment",
+  "version": "1.0.0",
+  "description": "Test Automation Assessment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "tests": "npx cypress run"
+  },
+  "author": "Luidson Lucas Bortolatto",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^17.1.0",
+    "@cypress/webpack-preprocessor": "^5.17.1",
+    "cypress": "^12.12.0"
+  }
+}
