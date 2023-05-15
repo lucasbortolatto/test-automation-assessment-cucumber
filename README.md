@@ -7,7 +7,7 @@ These tests were created as a challenge to automate three scenarios using cypres
 
 - TC001 - Login (Positive) Test
 - TC002 - Login (Negative) Tests
-- TC003 - Validate invoice detais
+- TC003 - Validate invoice details
 
 ### Author
 Luidson Lucas Bortolatto
