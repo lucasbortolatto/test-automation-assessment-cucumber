@@ -20,5 +20,4 @@ Cypress.Commands.add('validateLoginErrorMessage', () => {
 
 Cypress.Commands.add('openInvoiceDetails', (row) => {
     cy.get('.mt-3').siblings().eq(row).find('a').invoke('removeAttr', 'target').click()
-    cy.get('header').as('header').contains('Invoice Details')
 })

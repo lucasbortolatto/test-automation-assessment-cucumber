@@ -5,7 +5,7 @@ Feature: Login
   Scenario: TC001 - Login (Positive)
     When User enters username as '<username>' and password as '<password>'
     When User clicks on login button
-    Then User is able should see invoice list page
+    Then User is able to see invoice list page
     Examples:
             | username | password |
             | demouser    | abc123 |

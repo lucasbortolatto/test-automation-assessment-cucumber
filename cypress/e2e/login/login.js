@@ -12,7 +12,7 @@ When('User clicks on login button', () => {
     cy.clickOnLoginButton()
 })
 
-Then('User is able should see invoice list page', () => {
+Then('User is able to see invoice list page', () => {
     cy.url().should('eq',Cypress.config().baseUrl+'account')
     cy.get('header').find('h2').should('have.text', 'Invoice List');
 })
@@ -21,4 +21,3 @@ Then('User is not able to log into application and error message is displayed', 
     cy.url().should('eq', Cypress.config().baseUrl)
     cy.validateLoginErrorMessage();
 })
-
