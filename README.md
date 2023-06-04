@@ -23,7 +23,7 @@ Luidson Lucas Bortolatto
 
 - For "TC003 - Validate invoice details" test, I have used one extra argument called `invoiceTobeOpened` in "Examples" than arguments specified on the assessment data table. It was used in order to make easier to validate other invoices (in case there are more invoices added to the application in the future and we can test them by adding new iterations. For example, if we want to also test the second invoice from the Invoice List, we can do it by passing the number 2 as argument)
 
-- As specified previously, some custom commands were used for common actions, and additionally, for Invoice Details tests, I have used some alias in order to reuse some selectors and avoid code duplication. An alternative could be using the Page Objects pattern to do it. However, the [Cypress documentation](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/) recommends not using it, using custom commands and alias instead of Page Objects. It's important to say that Cypress supports Page Objects and it can be used.
+- As specified previously, some custom commands were used for common actions, and additionally, for Invoice Details tests, I have used some alias in order to reuse some selectors and avoid code duplication. An alternative could be using the Page Objects pattern to do it. However, the [Cypress documentation](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/) recommends not using it, using custom commands and alias instead of Page Objects. It's important to say that Cypress supports Page Objects and it can be used
 
 
 ### How to execute the tests
@@ -37,6 +37,8 @@ Luidson Lucas Bortolatto
 2. Run `npm install` and wait for the installation to finish;
 3. Optional: Open the project on your favorite IDE;
 3. Run tests using command line running `npm run tests` or using cypress tool `npm run cypress:open`
+
+Ps: When running using `npm run tests`command, a cucumber report is generated, and it's possible to access it from `cypress/reports/cucumber/cucumber-report.html` and open it using a browser.
 
 
 

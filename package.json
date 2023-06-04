@@ -14,5 +14,12 @@
     "@badeball/cypress-cucumber-preprocessor": "^17.1.0",
     "@cypress/webpack-preprocessor": "^5.17.1",
     "cypress": "^12.12.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber/cucumber-report.html"
+    }
   }
+
 }
