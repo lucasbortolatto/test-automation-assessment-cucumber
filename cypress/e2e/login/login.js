@@ -13,8 +13,8 @@ When('User clicks on login button', () => {
 })
 
 Then('User is able to see invoice list page', () => {
-    cy.url().should('eq',Cypress.config().baseUrl+'account')
-    cy.get('header').find('h2').should('have.text', 'Invoice List');
+    cy.url().should('eq',Cypress.config().baseUrl + 'account')
+    cy.validateInvoiceListTitleIsDisplayed()
 })
 
 Then('User is not able to log into application and error message is displayed', () => {

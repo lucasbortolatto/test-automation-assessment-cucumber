@@ -8,15 +8,15 @@ Feature: Login
     Then User is able to see invoice list page
     Examples:
             | username | password |
-            | demouser    | abc123 |
+            | demouser | abc123   |
 
   Scenario: TC002 - Login (Negative)
     When User enters username as '<username>' and password as '<password>'
     When User clicks on login button
     Then User is not able to log into application and error message is displayed
     Examples:
-            | username | password |
-            | Demouser    | abc123 |
-            | demouser_    | xyz |
-            | demouser    | nananana |
-            | demouser    | abc123 |
+            | username  | password |
+            | Demouser  | abc123   |
+            | demouser_ | xyz      |
+            | demouser  | nananana |
+            | demouser  | abc123   |

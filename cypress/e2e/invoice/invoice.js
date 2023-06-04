@@ -8,17 +8,17 @@ When('User log into the application with username {string} and password {string}
     cy.login(username,password)
 })
 
-Then('User is able should see invoice list page', () => {
-    cy.url().should('eq',Cypress.config().baseUrl+'account')
-    cy.get('header').find('h2').should('have.text', 'Invoice List');
+Then('User is able to see invoice list page', () => {
+    cy.url().should('eq',Cypress.config().baseUrl + 'account')
+    cy.validateInvoiceListTitleIsDisplayed()
 })
 
 Given('Invoice list is loaded in the screen', () => {
-    cy.get('header').find('h2').should('have.text', 'Invoice List')
+    cy.validateInvoiceListTitleIsDisplayed()
 })
 
-When('User clicks on invoice details of first item present on the table', () => {
-    cy.openInvoiceDetails(1)
+When('User clicks on invoice details of item {int} present on the table', (invoice) => {
+    cy.openInvoiceDetails(invoice)
 })
 
 Then('User is able to see invoice details page', () => {
@@ -26,18 +26,18 @@ Then('User is able to see invoice details page', () => {
 })
 
 Then('User should see hotel name displayed as {string}', (hotelName) => {
-    cy.get('header').siblings().as('headerSibling')
+    cy.get('@header').siblings().as('headerSibling')
     .first().as('hotelName').should('have.text', hotelName)
 })
 
 Then('User should see invoice date {string} and duo date {string}', (invoiceDate, duoDate) => {
     cy.get('@headerSibling').find('li')
-      .first().should('have.text', 'Invoice Date: ' + invoiceDate)
-      .next().should('have.text', 'Due Date: ' + duoDate)
+      .first().should('have.text', `Invoice Date: ${invoiceDate}`)
+      .next().should('have.text', `Due Date: ${duoDate}`)
 })
 
 Then('User is able to see invoice number {string}', (invoiceNumber) => {
-    cy.get('@hotelName').next().should('have.text', 'Invoice ' + invoiceNumber + ' details')
+    cy.get('@hotelName').next().should('have.text', `Invoice ${invoiceNumber} details`)
 })
 
 Then('User is able to see booking code {string}', (bookingCode) => {
@@ -67,7 +67,7 @@ Then('User should see checkin {string} and checkout {string} dates', (checkIn, c
       })
 })
 
-Then('User should see total stay count {string} and total stay amount {string}', (totalStayCount, totalStayAmount) => {
+Then('User should see total stay count {int} and total stay amount {string}', (totalStayCount, totalStayAmount) => {
     cy.get('@bookingStayDetailsTable').find('tr').eq(2).within(() => {
         cy.get('td').eq(1).should('have.text', totalStayCount)
       })
